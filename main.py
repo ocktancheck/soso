@@ -62,7 +62,7 @@ def get_llm_response(prompt, user_id):
     while retry_count < max_retries:
         for api_key in API_GEMINI_KEYS:
             try:
-                with open('data/prompt.txt', 'r', encoding='utf-8') as file:
+                with open('prompt.txt', 'r', encoding='utf-8') as file:
                     prompt_content = file.read()
                 prompt_with_customization = prompt_content + str(prompt)
                 headers = {"Content-Type": "application/json"}
